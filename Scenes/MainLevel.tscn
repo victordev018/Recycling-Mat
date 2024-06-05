@@ -360,7 +360,8 @@ tile_data = PoolIntArray( 0, 3, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 
 position = Vector2( 240, 223.5 )
 scale = Vector2( 0.125, 0.310096 )
 frames = SubResource( 17 )
-speed_scale = 2.0
+frame = 4
+speed_scale = 4.0
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite"]
