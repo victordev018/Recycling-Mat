@@ -10,6 +10,11 @@ func createResidue():
 	# instanciar cena de resíduo
 	var _residue = residueScene.instance();
 	levelNode.add_child(_residue);
+	# obter chave aleatória
+	var _residueKey = getRandomResidueKey();
+	# atribuir sprite devido ao resíduo
+	_residue.residueTexture.texture = Global.residueDatabase.get(_residueKey).get("texture");
+	_residue.isRecyclible = Global.residueDatabase.get(_residueKey).get("recyclable");
 	_residue.global_position = Vector2(get_viewport().size.x / 2, get_viewport().size.y + 32);
 	if Input.is_action_just_pressed("ui_right"):
 		_residue.global_position = Vector2(get_viewport().size.x + 32, get_viewport().size.y + 0);
@@ -25,5 +30,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") and Global.instanciateResidue:
 		createResidue();
 		Global.instanciateResidue = false;
-	
-		
+			
+ ## função para pegar uma chave aleatória do dicionário
+func getRandomResidueKey() -> String:
+	var _keys = Global.residueDatabase.keys()
+	var _index = randi() % len(_keys);
+	return _keys[_index];
+
+
+
+

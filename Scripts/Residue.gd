@@ -2,6 +2,7 @@ extends Area2D
 
 var residueId : String = "";
 onready var residueTexture = get_node("Sprite");
+var isRecyclible: bool;
 
 ## variável que controla o poder se movimentar do resíduo
 var moveResudue:bool = false;
