@@ -1,6 +1,8 @@
 extends Area2D
 
 var residueId : String = "";
+onready var residueTexture = get_node("Sprite");
+
 ## variável que controla o poder se movimentar do resíduo
 var moveResudue:bool = false;
 ## variável que permite que o residuo vá até a bandeja
@@ -13,6 +15,7 @@ var timerInit: bool = false
 var direction;
 
 func _ready():
+	Global.residuo = self;
 	moveResidueToTray = true;
 
 func _process(delta):
@@ -64,3 +67,4 @@ func checkPosition() -> void:
 ## quando o tempo do resíduo acabar
 func _on_Timer_timeout():
 	queue_free();
+	Global.instanciateResidue = true;

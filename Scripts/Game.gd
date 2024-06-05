@@ -17,9 +17,13 @@ func createResidue():
 		_residue.global_position = Vector2(get_viewport().size.x - 32, get_viewport().size.y + 0);
 		
 	
+func _ready():
+	Global.instanciateResidue = true;
+	
 func _process(delta):
 	# instanciar residuos ao apertar tecla teste
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and Global.instanciateResidue:
 		createResidue();
+		Global.instanciateResidue = false;
 	
 		
