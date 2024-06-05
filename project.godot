@@ -8,14 +8,30 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Game",
+"language": "GDScript",
+"path": "res://Scripts/Game.gd"
+} ]
+_global_script_class_icons={
+"Game": ""
+}
+
 [application]
 
 config/name="Eco Adventure"
 run/main_scene="res://Scenes/MainLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scenes/Global.tscn"
+
 [display]
 
+window/size/width=480
+window/size/height=270
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
