@@ -11,8 +11,15 @@ func createResidue():
 	var _residue = residueScene.instance();
 	levelNode.add_child(_residue);
 	_residue.global_position = Vector2(get_viewport().size.x / 2, get_viewport().size.y + 32);
+	if Input.is_action_just_pressed("ui_right"):
+		_residue.global_position = Vector2(get_viewport().size.x + 32, get_viewport().size.y + 0);
+	elif Input.is_action_just_pressed("ui_left"):
+		_residue.global_position = Vector2(get_viewport().size.x - 32, get_viewport().size.y + 0);
+		
 	
 func _process(delta):
 	# instanciar residuos ao apertar tecla teste
 	if Input.is_action_just_pressed("ui_accept"):
 		createResidue();
+	
+		
