@@ -19,6 +19,7 @@ func _process(delta):
 	print(global_position)
 #	print(moveResidueToTray)
 	# mover para cima na esteira
+
 	if moveResidueToTray:
 		var _speed = 2; # TODO: trocar pela variável correspondente a velocidade da esteira
 		global_position = global_position.move_toward(Global.levelNode.trayPosition, _speed);
