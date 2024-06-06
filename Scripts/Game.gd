@@ -19,6 +19,7 @@ func _process(delta):
 
 ## Cria e posiciona uma instância de resíduo no jogo na posição apropriada
 func createResidue(): 
+	Global.levelNode.animation.playing = true;
 	print("criando resíduo"); 
 	# instanciar cena de resíduo
 	var _residue = residueScene.instance();

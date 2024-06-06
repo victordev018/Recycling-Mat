@@ -48,6 +48,7 @@ func residueMoviment(delta) -> void:
 func checkPosition() -> void:
 	# verifica se o resíduo chegou na bandeija
 	if global_position == Global.levelNode.trayPosition:
+		Global.levelNode.animation.playing = false;
 		moveResidueToTray = false;
 		moveResudue = true;
 	else:
