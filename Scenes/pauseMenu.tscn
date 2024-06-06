@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/pauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets-MNR/Notalot35Regular-8DeD.ttf.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.341176 )
@@ -23,6 +24,15 @@ Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
 
 [node name="pauseMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -47,28 +57,31 @@ theme = SubResource( 6 )
 
 [node name="ResumeButton" type="Button" parent="controls"]
 margin_right = 99.0
-margin_bottom = 14.0
+margin_bottom = 11.0
 custom_colors/font_color_focus = Color( 0.478431, 0.913725, 0.313726, 1 )
 custom_colors/font_color_hover = Color( 0.478431, 0.913725, 0.313726, 1 )
 custom_colors/font_color_pressed = Color( 0.117647, 0.52549, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Resume"
 
 [node name="MenuButton" type="Button" parent="controls"]
-margin_top = 18.0
+margin_top = 15.0
 margin_right = 99.0
-margin_bottom = 32.0
+margin_bottom = 26.0
 custom_colors/font_color_focus = Color( 0.478431, 0.913725, 0.313726, 1 )
 custom_colors/font_color_hover = Color( 0.478431, 0.913725, 0.313726, 1 )
 custom_colors/font_color_pressed = Color( 0.117647, 0.52549, 0, 1 )
+custom_fonts/font = SubResource( 8 )
 text = "Back to Menu"
 
 [node name="ExitButton" type="Button" parent="controls"]
-margin_top = 36.0
+margin_top = 30.0
 margin_right = 99.0
-margin_bottom = 50.0
+margin_bottom = 41.0
 custom_colors/font_color_focus = Color( 0.478431, 0.913725, 0.313726, 1 )
 custom_colors/font_color_hover = Color( 0.478431, 0.913725, 0.313726, 1 )
 custom_colors/font_color_pressed = Color( 0.117647, 0.52549, 0, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "Exit Game"
 
 [connection signal="pressed" from="controls/ResumeButton" to="." method="_on_ResumeButton_pressed"]

@@ -24,6 +24,7 @@ func _on_ResumeButton_pressed():
 
 func _on_MenuButton_pressed():
 	get_tree().change_scene("res://Scenes/menuInicial.tscn")
+	get_tree().paused = false
 
 
 func _on_ExitButton_pressed():
