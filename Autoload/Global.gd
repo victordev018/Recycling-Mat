@@ -8,6 +8,12 @@ var instanciateResidue: bool;
 var residuo = null;
 ## score de acertos do player
 var score: int = 0;
+## efeitos sonoros para reposta certa e errada, respectivamente
+onready var soundCorrectAnswer = get_node("Sounds/CorrectAnswer");
+onready var soundErrorAnswer = get_node("Sounds/ErrorAnswer");
+
+onready var timerSound = get_node("Timer");
+
 
 ## resíduos database.
 var residueDatabase: Dictionary = {
@@ -64,3 +70,8 @@ var residueDatabase: Dictionary = {
 func _ready():
 	OS.window_size = Vector2(960, 540)
 	OS.center_window()
+	
+func _on_Timer_timeout():
+	soundCorrectAnswer.stop();
+	soundErrorAnswer.stop();
+	

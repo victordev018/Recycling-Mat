@@ -8,6 +8,7 @@ onready var levelNode : Node2D = get_parent();
 var residuesAlreadyInstantiate: Array = [];
 
 func _ready():
+#	Global.soundCorrectAnswer.play()
 	Global.instanciateResidue = true;
 	
 func _process(delta):
