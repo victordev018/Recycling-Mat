@@ -82,13 +82,22 @@ func _on_Timer_timeout():
 	
 ## função para verificar se o player acertou se o resíduo é ou não reciclável
 func checkRecyclable(condition: bool, points:int) -> void:
+	# se a propriedade "recyclable" do resíduo obedecer for igual a condição
 	if isRecyclible == condition:
+		# incrementa pontos
 		Global.score += points;
+		# toca a música de efeito
 		Global.soundCorrectAnswer.play();
+		# inicia o timer de duração de música
 		Global.timerSound.start();
 		
 	else:
+		# chamando função para tremer tela
+		Global.camera.initShake(4.0, 0.5);
+		# decrementando score
 		Global.score -= points/2;
+		# toca música de erro
 		Global.soundErrorAnswer.play()
+		# iniciando o timer de duração de música
 		Global.timerSound.start();
 	

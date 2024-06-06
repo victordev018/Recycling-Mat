@@ -11,7 +11,9 @@ var score: int = 0;
 ## efeitos sonoros para reposta certa e errada, respectivamente
 onready var soundCorrectAnswer = get_node("Sounds/CorrectAnswer");
 onready var soundErrorAnswer = get_node("Sounds/ErrorAnswer");
-
+## referência a câmera principal do jogo
+var camera = null
+## referência ao tempo de música
 onready var timerSound = get_node("Timer");
 
 
