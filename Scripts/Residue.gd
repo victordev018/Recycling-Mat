@@ -10,8 +10,10 @@ var moveResudue:bool = false;
 var moveResidueToTray: bool = false
 ## referência ao timer
 onready var timer = get_node("Timer");
-## variável que verifica se o timer foi iniciado;
+## variável que verifica se o timer foi iniciado
 var timerInit: bool = false
+## variável que verifica se o timerChoice foi iniciado
+var isPlayingTimerChoice: bool = false;
 
 var direction;
 
@@ -20,10 +22,7 @@ func _ready():
 	moveResidueToTray = true;
 
 func _process(delta):
-	print(global_position)
-#	print(moveResidueToTray)
 	# mover para cima na esteira
-
 	if moveResidueToTray:
 		var _speed = 2; # TODO: trocar pela variável correspondente a velocidade da esteira
 		global_position = global_position.move_toward(Global.levelNode.trayPosition, _speed);
@@ -48,6 +47,10 @@ func residueMoviment(delta) -> void:
 func checkPosition() -> void:
 	# verifica se o resíduo chegou na bandeija
 	if global_position == Global.levelNode.trayPosition:
+		## verificando se o choice timer não foi iniciado:
+		if !isPlayingTimerChoice:
+			Global.levelNode.choiceTimer.start();
+			isPlayingTimerChoice = true;
 		Global.levelNode.animation.playing = false;
 		moveResidueToTray = false;
 		moveResudue = true;
@@ -57,6 +60,8 @@ func checkPosition() -> void:
 	# verifica se o resíduo entrou no buraco da direita
 	if self.global_position == Global.levelNode.holeRightPos and !timerInit:
 		print("estou no buraco direito")
+		Global.levelNode.choiceTimer.stop();
+		isPlayingTimerChoice = false;
 		checkRecyclable(true, 10);
 		timer.start();
 		timerInit = true;
@@ -64,6 +69,8 @@ func checkPosition() -> void:
 	# verifica se o resíduo entrou no buraco da esquerda
 	if self.global_position == Global.levelNode.holeLeftPos and !timerInit:
 		print("estou no buraco esquerda")
+		Global.levelNode.choiceTimer.stop();
+		isPlayingTimerChoice = false;
 		checkRecyclable(false, 10);
 		timer.start();
 		timerInit = true;
