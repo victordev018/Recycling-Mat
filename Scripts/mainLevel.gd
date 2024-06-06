@@ -24,7 +24,7 @@ func _process(delta) -> void:
 
 ## quando o choice timer acabar:
 func _on_ChoiceTimer_timeout():
-	print("Tempo de escolha esgotado ._.")
+	print("Tempo de escolha esgotado ._.");
 	var _points = 5;
 	Global.score -= _points;
 	Global.residuo.queue_free()

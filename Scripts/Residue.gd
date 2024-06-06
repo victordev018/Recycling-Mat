@@ -84,6 +84,11 @@ func _on_Timer_timeout():
 func checkRecyclable(condition: bool, points:int) -> void:
 	if isRecyclible == condition:
 		Global.score += points;
+		Global.soundCorrectAnswer.play();
+		Global.timerSound.start();
+		
 	else:
 		Global.score -= points/2;
+		Global.soundErrorAnswer.play()
+		Global.timerSound.start();
 	
