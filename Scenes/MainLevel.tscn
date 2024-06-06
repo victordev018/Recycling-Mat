@@ -424,4 +424,12 @@ color = Color( 0.513726, 0.513726, 0.513726, 1 )
 
 [node name="Game" parent="." instance=ExtResource( 3 )]
 
+
+[node name="Score" type="Label" parent="."]
+margin_left = 207.0
+margin_top = 26.0
+margin_right = 283.0
+margin_bottom = 48.0
+text = "Score:"
+
 [node name="pauseMenu" parent="." instance=ExtResource( 5 )]

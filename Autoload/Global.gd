@@ -6,6 +6,8 @@ var levelNode = null;
 var instanciateResidue: bool;
 ## referencia ao residuo
 var residuo = null;
+## score de acertos do player
+var score: int = 0;
 
 ## resíduos database.
 var residueDatabase: Dictionary = {

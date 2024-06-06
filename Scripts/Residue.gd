@@ -56,12 +56,14 @@ func checkPosition() -> void:
 	# verifica se o resíduo entrou no buraco da direita
 	if self.global_position == Global.levelNode.holeRightPos and !timerInit:
 		print("estou no buraco direito")
+		checkRecyclable(true, 10);
 		timer.start();
 		timerInit = true;
 
 	# verifica se o resíduo entrou no buraco da esquerda
 	if self.global_position == Global.levelNode.holeLeftPos and !timerInit:
 		print("estou no buraco esquerda")
+		checkRecyclable(false, 10);
 		timer.start();
 		timerInit = true;
 		
@@ -69,3 +71,11 @@ func checkPosition() -> void:
 func _on_Timer_timeout():
 	queue_free();
 	Global.instanciateResidue = true;
+	
+## função para verificar se o player acertou se o resíduo é ou não reciclável
+func checkRecyclable(condition: bool, points:int) -> void:
+	if isRecyclible == condition:
+		Global.score += points;
+	else:
+		Global.score -= points/2;
+	
