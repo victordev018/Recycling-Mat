@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "",
+"class": "GDSerComm",
+"language": "NativeScript",
+"path": "res://addons/GDSerCommDock/bin/GDSerComm.gdns"
+}, {
 "base": "Node",
 "class": "Game",
 "language": "GDScript",
 "path": "res://Scripts/Game.gd"
 } ]
 _global_script_class_icons={
+"GDSerComm": "",
 "Game": ""
 }
 
@@ -27,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Scenes/Global.tscn"
+ArduinoEsplora="*res://Scenes/ArduinoEsplora.tscn"
 
 [display]
 
@@ -34,6 +41,10 @@ window/size/width=480
 window/size/height=270
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/GDSerCommDock/plugin.cfg" )
 
 [gui]
 

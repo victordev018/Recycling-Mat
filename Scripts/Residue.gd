@@ -15,13 +15,18 @@ var timerInit: bool = false
 ## variável que verifica se o timerChoice foi iniciado
 var isPlayingTimerChoice: bool = false;
 
+var valueDirection: float = -20.0;
+
 var direction;
+
 
 func _ready():
 	Global.residuo = self;
 	moveResidueToTray = true;
 
 func _process(delta):
+	valueDirection = float(ArduinoEsplora.tiltValue);
+	print("valueDirection: ", valueDirection)
 	# mover para cima na esteira
 	if moveResidueToTray:
 		var _speed = 2; # TODO: trocar pela variável correspondente a velocidade da esteira
@@ -34,13 +39,13 @@ func _process(delta):
 
 ## função para movimentar o residuo:
 func residueMoviment(delta) -> void:
-	direction = Input.get_axis("ui_left", "ui_right");
+	direction = valueDirection;
 	var _speed: float = 32;
 	
 	if direction != 0:
-		if direction > 0:
+		if direction >= 60:
 			global_position.x = global_position.x + 32;
-		elif direction < 0:
+		elif direction <= -70:
 			global_position.x = global_position.x - 32;
 
 ## função para checar posiçoes:
