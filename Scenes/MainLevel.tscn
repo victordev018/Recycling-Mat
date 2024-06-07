@@ -539,7 +539,7 @@ tile_data = PoolIntArray( 0, 16, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0,
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 224 )
 frames = SubResource( 17 )
-frame = 4
+frame = 3
 speed_scale = 2.0
 playing = true
 
@@ -551,17 +551,17 @@ shape = SubResource( 18 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = 32.0
-margin_top = 48.0
-margin_right = 103.0
-margin_bottom = 79.0
-color = Color( 0, 0, 0, 0.32549 )
+margin_top = 40.0
+margin_right = 96.0
+margin_bottom = 56.0
+color = Color( 0, 0, 0, 0.447059 )
 
 [node name="ColorRect8" type="ColorRect" parent="."]
 margin_left = 376.0
-margin_top = 48.0
+margin_top = 40.0
 margin_right = 447.0
-margin_bottom = 79.0
-color = Color( 0, 0, 0, 0.32549 )
+margin_bottom = 56.0
+color = Color( 0, 0, 0, 0.447059 )
 
 [node name="ColorRect9" type="ColorRect" parent="."]
 margin_left = 16.0
@@ -607,26 +607,27 @@ margin_bottom = 52.0
 custom_styles/panel = SubResource( 19 )
 
 [node name="Score" type="Label" parent="Labels"]
-margin_left = 192.0
-margin_top = 32.0
-margin_right = 268.0
-margin_bottom = 54.0
+margin_left = 186.0
+margin_top = 18.0
+margin_right = 262.0
+margin_bottom = 40.0
 custom_fonts/font = SubResource( 20 )
 text = "Score:"
 
 [node name="ChoiceTimer" type="Label" parent="Labels"]
 margin_left = -160.0
-margin_top = 32.0
+margin_top = 18.0
 margin_right = -119.0
-margin_bottom = 46.0
+margin_bottom = 32.0
 custom_fonts/font = SubResource( 21 )
 text = "Timer:"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 3 )
 scale = Vector2( 0.966274, 1.01009 )
 anchor_mode = 0
 current = true
+smoothing_speed = 9.0
 script = ExtResource( 6 )
 
 [connection signal="timeout" from="ChoiceTimer" to="." method="_on_ChoiceTimer_timeout"]

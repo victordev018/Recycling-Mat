@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Eco Adventure"
-run/main_scene="res://Scenes/MainLevel.tscn"
+run/main_scene="res://Scenes/menuInicial.tscn"
 config/icon="res://icon.png"
 
 [autoload]
