@@ -25,8 +25,8 @@ func _ready():
 	moveResidueToTray = true;
 
 func _process(delta):
-	valueDirection = float(ArduinoEsplora.tiltValue);
-	print("valueDirection: ", valueDirection)
+#	valueDirection = float(ArduinoEsplora.tiltValue);
+#	print("valueDirection: ", valueDirection)
 	# mover para cima na esteira
 	if moveResidueToTray:
 		var _speed = 2; # TODO: trocar pela variável correspondente a velocidade da esteira
@@ -43,9 +43,9 @@ func residueMoviment(delta) -> void:
 	var _speed: float = 32;
 	
 	if direction != 0:
-		if direction >= 60:
+		if direction >= 60 or Input.is_action_just_pressed("ui_right"):
 			global_position.x = global_position.x + 32;
-		elif direction <= -70:
+		elif direction <= -70 or Input.is_action_just_pressed("ui_left"):
 			global_position.x = global_position.x - 32;
 
 ## função para checar posiçoes:
