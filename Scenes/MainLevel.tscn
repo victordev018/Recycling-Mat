@@ -539,7 +539,7 @@ tile_data = PoolIntArray( 0, 16, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0,
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 224 )
 frames = SubResource( 17 )
-frame = 1
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -629,5 +629,23 @@ anchor_mode = 0
 current = true
 smoothing_speed = 9.0
 script = ExtResource( 6 )
+
+[node name="LabelCallsigns" type="Node2D" parent="."]
+
+[node name="Recycling" type="Label" parent="LabelCallsigns"]
+margin_left = 291.0
+margin_top = 134.0
+margin_right = 367.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 20 )
+text = "RECYCLABE"
+
+[node name="NotRecycling" type="Label" parent="LabelCallsigns"]
+margin_left = 117.0
+margin_top = 134.0
+margin_right = 193.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 20 )
+text = "NOT RECYCLABE"
 
 [connection signal="timeout" from="ChoiceTimer" to="." method="_on_ChoiceTimer_timeout"]
