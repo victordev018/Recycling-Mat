@@ -59,7 +59,7 @@ custom_fonts/font = SubResource( 7 )
 text = "A reciclagem é um processo crucial para a sustentabilidade, permitindo a transformação de resíduos em novos produtos e reduzindo a quantidade de lixo nos aterros. Resíduos recicláveis  podem ser reprocessados e reutilizados. Já os resíduos não recicláveis devem ser descartados de maneira apropriada para evitar poluição e danos ao meio ambiente. A separação correta dos materiais é essencial para o sucesso da reciclagem.
 
 Controles: 
-Você pode inclinar seu controle para a esqueda e direita destinando os resíduos que aparecem na esteira para seus respectivos locais, classificando, assim, estes como recicláveis ou não recicláveis (direita - reciclavel ; esquerda - não reciclável)."
+Para fazer com que o resíduo venha na esteira clique no switch 1 do esplora, para fazer a escolha você pode inclinar seu controle para a esqueda ou direita, destinando os resíduos que aparecem na esteira para seus respectivos locais, classificando, assim, estes como recicláveis ou não recicláveis (direita - reciclavel ; esquerda - não reciclável)."
 autowrap = true
 
 [node name="BackButton" type="Button" parent="."]
