@@ -1,0 +1,177 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Assets-MNR/Notalot35Regular-8DeD.ttf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets-Residuos/Não Reciclaveis/Monitor.png" type="Texture" id=2]
+[ext_resource path="res://Assets-Residuos/Não Reciclaveis/Papel Higiênico.png" type="Texture" id=3]
+[ext_resource path="res://Assets-Residuos/Não Reciclaveis/Oculos.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/ResiduesResumepg2.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0.615686 )
+
+[sub_resource type="Theme" id=9]
+Button/styles/disabled = SubResource( 4 )
+Button/styles/focus = SubResource( 5 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 7 )
+Button/styles/pressed = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0, 0.615686 )
+
+[sub_resource type="Theme" id=16]
+Button/styles/disabled = SubResource( 11 )
+Button/styles/focus = SubResource( 12 )
+Button/styles/hover = SubResource( 13 )
+Button/styles/normal = SubResource( 14 )
+Button/styles/pressed = SubResource( 15 )
+
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 1 )
+
+[node name="ResiduesResumepg2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.878431, 0.537255, 0, 0.635294 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 56.0
+color = Color( 0.537255, 0.301961, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 8.0
+margin_top = 136.0
+margin_right = 56.0
+margin_bottom = 184.0
+color = Color( 0.537255, 0.301961, 0, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 56.0
+margin_bottom = 120.0
+color = Color( 0.537255, 0.301961, 0, 1 )
+
+[node name="Monitor" type="Sprite" parent="."]
+position = Vector2( 32, 34 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Monitor"]
+anchor_left = 0.5
+anchor_top = 0.119
+anchor_right = 0.5
+anchor_bottom = 0.119
+margin_left = 16.0
+margin_top = -29.808
+margin_right = 424.0
+margin_bottom = 51.192
+custom_fonts/font = SubResource( 1 )
+text = "Os monitores não são recicláveis facilmente porque são feitos de materiais diferentes, como vidro, plástico, metal e eletrônicos, que são difíceis de separar. Além disso, alguns têm substâncias perigosas, como mercúrio e chumbo, que poluem o meio ambiente."
+autowrap = true
+
+[node name="Oculos" type="Sprite" parent="."]
+position = Vector2( 33, 97 )
+texture = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="Oculos"]
+anchor_left = 0.5
+anchor_top = 0.356
+anchor_right = 0.5
+anchor_bottom = 0.356
+margin_left = 15.0
+margin_top = -36.392
+margin_right = 423.0
+margin_bottom = 30.608
+custom_fonts/font = SubResource( 2 )
+text = "Os óculos não são recicláveis facilmente porque são feitos de diferentes materiais, como plástico, vidro e metal, que são difíceis de separar. Além disso, as lentes e as armações têm tratamentos especiais que complicam a reciclagem. "
+autowrap = true
+
+[node name="PapelHigiênico" type="Sprite" parent="."]
+position = Vector2( 33, 160 )
+texture = ExtResource( 3 )
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.593
+anchor_right = 0.5
+anchor_bottom = 0.593
+margin_left = -176.0
+margin_top = -40.11
+margin_right = 224.0
+margin_bottom = 31.89
+custom_fonts/font = SubResource( 3 )
+text = "
+O papel higiênico não é reciclável porque, após o uso, fica contaminado, impossibilitando o processo de reciclagem. Além disso, ele é feito para se decompor rapidamente na água, o que também dificulta sua reciclagem. Portanto, é importante descartar o papel higiênico usado no lixo adequado."
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 352.0
+margin_top = 240.0
+margin_right = 472.0
+margin_bottom = 264.0
+theme = SubResource( 9 )
+custom_colors/font_color_focus = Color( 0.878431, 0.631373, 0.309804, 1 )
+custom_colors/font_color_hover = Color( 0.878431, 0.631373, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.52549, 0.333333, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Return to Menu"
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 280.0
+margin_top = 240.0
+margin_right = 344.0
+margin_bottom = 264.0
+theme = SubResource( 16 )
+custom_colors/font_color_focus = Color( 0.878431, 0.631373, 0.309804, 1 )
+custom_colors/font_color_hover = Color( 0.878431, 0.631373, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.52549, 0.333333, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_Button2_pressed"]

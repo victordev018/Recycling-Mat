@@ -9,4 +9,4 @@ func _process(delta):
 	label.text = "Parabéns!! seu score foi " + str(Global.score) + " pontos"
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Scenes/ResiduesResume.tscn")
+	get_tree().change_scene("res://Scenes/WinResumeMenu.tscn")
