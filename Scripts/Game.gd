@@ -34,6 +34,7 @@ func createResidue():
 		_residue.isRecyclible = Global.residueDatabase.get(_residueKey).get("recyclable");
 		_residue.global_position = Vector2(get_viewport().size.x / 2, get_viewport().size.y + 32);
 	else:
+		get_tree().change_scene("res://Scenes/WinScreen.tscn")
 		print("acabou o game")
 
  ## função para pegar uma chave aleatória do dicionário

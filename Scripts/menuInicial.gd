@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	$controls/startButton.grab_focus()
+		$controls/startButton.grab_focus()
 
 
 func _on_startButton_pressed():
