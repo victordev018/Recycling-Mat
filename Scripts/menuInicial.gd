@@ -6,6 +6,8 @@ func _ready():
 
 
 func _on_startButton_pressed():
+	## zerando o score
+	Global.score = 0;
 	get_tree().change_scene("res://Scenes/MainLevel.tscn")
 
 
