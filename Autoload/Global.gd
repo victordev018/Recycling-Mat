@@ -69,11 +69,15 @@ var residueDatabase: Dictionary = {
 	}
 }
 
+## quando o jogo estiver sendo pre compilado
 func _ready():
-	OS.window_size = Vector2(960, 540)
-	OS.center_window()
+	## definindo propriedades da janela
+	OS.window_size = Vector2(960, 540)   # resolução da janela
+	OS.center_window()    # posição da janela
 	
+## quando o tempo de efeitos sonoros esgotar
 func _on_Timer_timeout():
+	## desligue os efeitos sonoros ativos
 	soundCorrectAnswer.stop();
 	soundErrorAnswer.stop();
 	
