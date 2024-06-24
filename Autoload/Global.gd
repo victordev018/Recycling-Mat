@@ -15,6 +15,7 @@ onready var soundErrorAnswer = get_node("Sounds/ErrorAnswer");
 var camera = null
 ## referência ao tempo de música
 onready var timerSound = get_node("Timer");
+var up: bool;
 
 
 ## resíduos database.

@@ -29,8 +29,8 @@ func _ready():
 
 func _process(delta):
 	## pegando valor passado pelo serial do esplora
-#	valueDirection = float(ArduinoEsplora.tiltValue);
-#	print("valueDirection: ", valueDirection)
+	valueDirection = float(ArduinoEsplora.tiltValue);
+	print("valueDirection: ", valueDirection)
 	# mover para cima na esteira
 	if moveResidueToTray:
 		var _speed = 2; # TODO: trocar pela variável correspondente a velocidade da esteira
@@ -94,6 +94,8 @@ func checkPosition() -> void:
 		timer.start();
 		## informa que o tempo de vida esta roalando
 		timerInit = true;
+		# var que decide se um resíduo pode subir pela esteira
+		Global.up = false;
 
 	# verifica se o resíduo entrou no buraco da esquerda
 	if self.global_position == Global.levelNode.holeLeftPos and !timerInit:
@@ -108,6 +110,8 @@ func checkPosition() -> void:
 		timer.start();
 		## informa que o tempo de vida esta roalando
 		timerInit = true;
+		# var que decide se um resíduo pode subir pela esteira
+		Global.up = false;
 		
 ## quando o tempo do resíduo acabar
 func _on_Timer_timeout():

@@ -15,7 +15,8 @@ func _process(delta):
 	# instanciar residuos ao apertar tecla enter
 	
 	## se clicar na tecla definida e poder instanciar produto for verdadeito
-	if Input.is_action_just_pressed("ui_accept") and Global.instanciateResidue:
+	if Global.up and Global.instanciateResidue:
+		print("residuo instanciado")
 		createResidue();   # cria novo resíduo
 		Global.instanciateResidue = false;   # não pode criar resíduo
 			

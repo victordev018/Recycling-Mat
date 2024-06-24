@@ -38,3 +38,5 @@ func _on_ChoiceTimer_timeout():
 	Global.residuo.queue_free()
 	## pode instanciar um novo resíduo
 	Global.instanciateResidue = true;
+	# var que decide se um resíduo pode subir pela esteira
+	Global.up = false;
